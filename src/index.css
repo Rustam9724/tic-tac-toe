@@ -1,0 +1,205 @@
+@font-face {
+  font-family: Marker;
+  src: url("assets/markerfelt_wide.ttf");
+}
+
+*, ul, p, h1, h2, h3, h4, button, body, input, ::before, ::after, div {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  background-color: #b388ff;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 5rem 0 1rem;
+}
+
+.title {
+  font-family: Marker;
+  color: #D78D00;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+
+.main {
+  position: relative;
+  margin: 0 auto;
+  width: 310px;
+  height: 310px;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.top-left {
+  border-right: 3px solid #D78D00;
+  border-bottom: 3px solid #D78D00;
+}
+
+.top-midle {
+  border-right: 3px solid #D78D00;
+  border-bottom: 3px solid #D78D00;
+}
+
+.top-right {
+  border-bottom: 3px solid #D78D00;
+}
+
+.midle-left {
+  border-right: 3px solid #D78D00;
+  border-bottom: 3px solid #D78D00;
+}
+
+.midle-midle {
+  border-right: 3px solid #D78D00;
+  border-bottom: 3px solid #D78D00;
+}
+
+.midle-right {
+  border-bottom: 3px solid #D78D00;
+}
+
+.bottom-left {
+  border-right: 3px solid #D78D00;
+}
+
+.bottom-midle {
+  border-right: 3px solid #D78D00;
+}
+
+.default {
+  width: 250px;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  display: none;
+}
+
+@keyframes horizontal-trait {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 250px;
+  }
+}
+
+.default.top-horizontal {
+  display: block;
+  top: 3rem;
+  left: 10%;
+  height: 3px;
+  animation: horizontal-trait 1s ease-in-out;
+}
+
+.default.midle-horizontal {
+  display: block;
+  top: 9.5rem;
+  width: 250px;
+  left: 10%;
+  height: 3px;
+  animation: horizontal-trait 1s ease-in-out;
+}
+
+.default.bottom-horizontal {
+  display: block;
+  top: 16rem;
+  width: 250px;
+  left: 10%;
+  height: 3px;
+  background-color: black;
+  animation: horizontal-trait 1s ease-in-out;
+}
+
+@keyframes vertical-trait {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 250px;
+  }
+}
+
+.default.left-vertical {
+  display: block;
+  width: 3px;
+  height: 250px;
+  left: 16%;
+  top: 1.5rem;
+  animation: vertical-trait 1s ease-in-out;
+}
+
+.default.midle-vertical {
+  display: block;
+  width: 3px;
+  height: 250px;
+  left: 49%;
+  top: 1.5rem;
+  animation: vertical-trait 1s ease-in-out;
+}
+
+.default.right-vertical {
+  display: block;
+  width: 3px;
+  height: 250px;
+  left: 83%;
+  top: 1.5rem;
+  animation: vertical-trait 1s ease-in-out;
+}
+
+.default.main-diagonal {
+  display: block;
+  transform: rotate(45deg);
+  display: block;
+  width: 350px;
+  height: 3px;
+  left: -7%;
+  top: 9.5rem;
+}
+
+.default.side-diagonal {
+  display: block;
+  transform: rotate(-45deg);
+  display: block;
+  width: 350px;
+  height: 3px;
+  left: -7%;
+  top: 9.5rem;
+}
