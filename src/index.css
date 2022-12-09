@@ -9,6 +9,7 @@
   box-sizing: border-box;
   border: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -32,6 +33,7 @@ html, body {
   font-size: 16px;
   color: #000;
   background-color: #b388ff;
+  font-family: Marker;
 }
 
 .wrapper {
@@ -44,6 +46,23 @@ html, body {
   color: #D78D00;
   font-size: 4rem;
   margin-bottom: 4rem;
+}
+
+.names {
+  display: flex;
+  width: 35%;
+  margin: 0 auto 2rem;
+  justify-content: space-between;
+}
+
+.names p {
+  margin: 0 0 1rem;
+}
+
+.names input {
+  outline: 2px solid #D78D00;
+  height: 2rem;
+  background-color: #b388ff;
 }
 
 .main {
@@ -184,22 +203,30 @@ td {
   animation: vertical-trait 1s ease-in-out;
 }
 
+@keyframes diagonal-trait {
+  to {
+    width: 400px
+  }
+}
+
 .default.main-diagonal {
   display: block;
-  transform: rotate(45deg);
-  display: block;
-  width: 350px;
   height: 3px;
-  left: -7%;
-  top: 9.5rem;
+  width: 0;
+  margin-top: -5px;
+  background:black;
+  transform: rotate(45deg);
+  transform-origin:left;
+  animation: diagonal-trait 1s linear forwards;
 }
 
 .default.side-diagonal {
   display: block;
-  transform: rotate(-45deg);
-  display: block;
-  width: 350px;
   height: 3px;
-  left: -7%;
-  top: 9.5rem;
+  width: 0;
+  margin-top: 303px;
+  background:black;
+  transform: rotate(-45deg);
+  transform-origin:left;
+  animation: diagonal-trait 1s linear forwards;
 }
