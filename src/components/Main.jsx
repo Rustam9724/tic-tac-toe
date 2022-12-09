@@ -1,37 +1,29 @@
-function Main({player, setPlayer, process, setProcess, trait}) {
-
-    function clickHandler(event) {
-        setPlayer(player === 'first' ? 'second' : 'first');
-        if (player === 'first') {
-            event.target.textContent = '×';
-            setProcess([...process, `${event.target.id}x`])
-        } else {
-            event.target.textContent = '○';
-            setProcess([...process, `${event.target.id}o`])
-        }
-    }
+function Main({player1, setPlayer1, player2, setPlayer2}) {  
     return (
-        <div className="main">
-            <div className={trait}></div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="11" className="top-left" onClick={clickHandler}></td>
-                        <td id="12" className="top-midle" onClick={clickHandler}></td>
-                        <td id="13" className="top-right" onClick={clickHandler}></td>
-                    </tr>
-                    <tr>
-                        <td id="21" className="midle-left" onClick={clickHandler}></td>
-                        <td id="22" className="midle-midle" onClick={clickHandler}></td>
-                        <td id="23" className="midle-right" onClick={clickHandler}></td>
-                    </tr>
-                    <tr>
-                        <td id="31" className="bottom-left" onClick={clickHandler}></td>
-                        <td id="32" className="bottom-midle" onClick={clickHandler}></td>
-                        <td id="33" className="bottom-right" onClick={clickHandler}></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div>
+            <div className="names">
+                <label>
+                    <p>Введите имя первого игрока</p>
+                    <input 
+                        type="text"
+                        value={player1}
+                        onChange={event => setPlayer1(event.target.value)} 
+                        placeholder="Введите имя"
+                    />
+                </label>
+                <label>
+                    <p>Введите имя второго игрока</p>
+                    <input 
+                        type="text"
+                        value={player2}
+                        onChange={event => setPlayer2(event.target.value)}
+                        placeholder="Введите имя"
+                    />
+                </label>
+            </div>
+            <button className="start-button">Начать!</button>
         </div>
     )
-}export default Main;
+}
+
+export default Main;

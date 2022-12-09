@@ -45,13 +45,13 @@ html, body {
   font-family: Marker;
   color: #D78D00;
   font-size: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .names {
   display: flex;
   width: 35%;
-  margin: 0 auto 2rem;
+  margin: 0 auto 4rem;
   justify-content: space-between;
 }
 
@@ -63,9 +63,27 @@ html, body {
   outline: 2px solid #D78D00;
   height: 2rem;
   background-color: #b388ff;
+  font-size: 1rem;
+  font-family: Marker;
+  padding: 0 0 0 1rem;
 }
 
-.main {
+.start-button {
+  width: 15%;
+  height: 2rem;
+  background-color: #D78D00;
+  font-family: Marker;
+  font-size: 1rem;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: black;
+  color: #D78D00;
+}
+
+.game {
   position: relative;
   margin: 0 auto;
   width: 310px;
