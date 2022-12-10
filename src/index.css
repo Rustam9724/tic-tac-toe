@@ -175,10 +175,16 @@ table {
 td {
   width: 100px;
   height: 100px;
-  margin: 0;
   font-size: 4rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media (max-width: 344px) {
+  td {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .top-left {
@@ -243,6 +249,12 @@ td {
   animation: horizontal-trait 1s ease-in-out;
 }
 
+@media (max-width: 344px) {
+  .default.top-horizontal {
+    top: 2rem;
+  }
+}
+
 .default.midle-horizontal {
   display: block;
   top: 9.5rem;
@@ -250,6 +262,12 @@ td {
   left: 10%;
   height: 3px;
   animation: horizontal-trait 1s ease-in-out;
+}
+
+@media (max-width: 344px) {
+  .default.midle-horizontal {
+    top: 7rem;
+  }
 }
 
 .default.bottom-horizontal {
@@ -260,6 +278,12 @@ td {
   height: 3px;
   background-color: black;
   animation: horizontal-trait 1s ease-in-out;
+}
+
+@media (max-width: 344px) {
+  .default.bottom-horizontal {
+    top: 12rem;
+  }
 }
 
 @keyframes vertical-trait {
@@ -281,6 +305,13 @@ td {
   animation: vertical-trait 1s ease-in-out;
 }
 
+@media (max-width: 344px) {
+  .default.left-vertical {
+    top: -0.5rem;
+    left: 24%
+  }
+}
+
 .default.midle-vertical {
   display: block;
   width: 3px;
@@ -288,6 +319,12 @@ td {
   left: 49%;
   top: 1.5rem;
   animation: vertical-trait 1s ease-in-out;
+}
+
+@media (max-width: 344px) {
+  .default.midle-vertical {
+    top: -0.5rem;
+  }
 }
 
 .default.right-vertical {
@@ -299,9 +336,22 @@ td {
   animation: vertical-trait 1s ease-in-out;
 }
 
+@media (max-width: 344px) {
+  .default.right-vertical {
+    top: -0.5rem;
+    left: 74.5%;
+  }
+}
+
 @keyframes diagonal-trait {
   to {
     width: 400px
+  }
+}
+
+@keyframes diagonal-trait-small {
+  to {
+    width: 300px
   }
 }
 
@@ -316,6 +366,14 @@ td {
   animation: diagonal-trait 1s linear forwards;
 }
 
+@media (max-width: 344px) {
+  .default.main-diagonal {
+    margin-top: 0;
+    margin-left: 43px;
+    animation: diagonal-trait-small 1s linear forwards;
+  }
+}
+
 .default.side-diagonal {
   display: block;
   height: 3px;
@@ -325,6 +383,14 @@ td {
   transform: rotate(-45deg);
   transform-origin:left;
   animation: diagonal-trait 1s linear forwards;
+}
+
+@media (max-width: 344px) {
+  .default.side-diagonal {
+    margin-top: 223px;
+    margin-left: 43px;
+    animation: diagonal-trait-small 1s linear forwards;
+  }
 }
 
 .winner {
