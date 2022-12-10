@@ -1,14 +1,25 @@
 function Game({player, setPlayer, process, setProcess, trait, setTrait, player1, player2, gameOver, setGameOver}) {
 
-    function clickHandler(event) {
-        if (!gameOver) {
+    // function clickHandler(event) {
+    //     if (!gameOver && event.target.textContent === '') {
+    //         setPlayer(player === 'first' ? 'second' : 'first');
+    //         if (player === 'first') {
+    //             event.target.textContent = '×';
+    //             setProcess([...process, `${event.target.id}x`])
+    //         } else {
+    //             event.target.textContent = '○';
+    //             setProcess([...process, `${event.target.id}o`])
+    //         }
+    //     }
+    // }
+
+    const clickHandler = (event) => {
+        if (!gameOver && event.target.textContent === '') {
             setPlayer(player === 'first' ? 'second' : 'first');
             if (player === 'first') {
-                event.target.textContent = '×';
                 setProcess([...process, `${event.target.id}x`])
             } else {
-                event.target.textContent = '○';
-                setProcess([...process, `${event.target.id}o`])
+                setProcess([...process, `${event.target.id}o`])    
             }
         }
     }
@@ -61,8 +72,17 @@ function Game({player, setPlayer, process, setProcess, trait, setTrait, player1,
     } else if (process.includes('13o') && process.includes('22o') && process.includes('31o')){
         setGameOver(true);
         setTrait('default side-diagonal')
+    } else if (process.length === 9) {
+        setGameOver(true);
     }
 
+    const literal = (str) => {
+        if (process.includes(`${str}x`)) {
+            return '×';
+        } else if (process.includes(`${str}o`)) {
+            return '○';
+        } 
+    }
 
     return (
         <>
@@ -75,19 +95,19 @@ function Game({player, setPlayer, process, setProcess, trait, setTrait, player1,
             <table>
                 <tbody>
                     <tr>
-                        <td id="11" className="top-left" onClick={clickHandler}></td>
-                        <td id="12" className="top-midle" onClick={clickHandler}></td>
-                        <td id="13" className="top-right" onClick={clickHandler}></td>
+                        <td id="11" className="top-left" onClick={clickHandler}>{literal('11')}</td>
+                        <td id="12" className="top-midle" onClick={clickHandler}>{literal('12')}</td>
+                        <td id="13" className="top-right" onClick={clickHandler}>{literal('13')}</td>
                     </tr>
                     <tr>
-                        <td id="21" className="midle-left" onClick={clickHandler}></td>
-                        <td id="22" className="midle-midle" onClick={clickHandler}></td>
-                        <td id="23" className="midle-right" onClick={clickHandler}></td>
+                        <td id="21" className="midle-left" onClick={clickHandler}>{literal('21')}</td>
+                        <td id="22" className="midle-midle" onClick={clickHandler}>{literal('22')}</td>
+                        <td id="23" className="midle-right" onClick={clickHandler}>{literal('23')}</td>
                     </tr>
                     <tr>
-                        <td id="31" className="bottom-left" onClick={clickHandler}></td>
-                        <td id="32" className="bottom-midle" onClick={clickHandler}></td>
-                        <td id="33" className="bottom-right" onClick={clickHandler}></td>
+                        <td id="31" className="bottom-left" onClick={clickHandler}>{literal('31')}</td>
+                        <td id="32" className="bottom-midle" onClick={clickHandler}>{literal('32')}</td>
+                        <td id="33" className="bottom-right" onClick={clickHandler}>{literal('33')}</td>
                     </tr>
                 </tbody>
             </table>

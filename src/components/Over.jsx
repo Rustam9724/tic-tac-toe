@@ -1,7 +1,16 @@
 import { Link } from 'react-router-dom';
 
 function Over({gameOver, setGameOver, setTrait, setProcess, setPlayer}) {
-    const clickHandler = () => {
+
+    let location = Location;
+    const clickHandler1 = () => {
+        setGameOver(false);
+        setTrait('default');
+        setProcess([]);
+        setPlayer('first');
+    }
+
+    const clickHandler2 = () => {
         setGameOver(false);
         setTrait('default');
         setProcess([]);
@@ -11,8 +20,8 @@ function Over({gameOver, setGameOver, setTrait, setProcess, setPlayer}) {
     if (gameOver) {
         return (
             <div className="over">
-                    <Link to="/" className="end-button" onClick={clickHandler}>Сменить игроков</Link>
-                <div className="end-button">
+                    <Link to="/" className="end-button" onClick={clickHandler1}>Сменить игроков</Link>
+                <div className="end-button" onClick={clickHandler2}>
                     Сыграть заново
                 </div>
             </div>
