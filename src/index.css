@@ -145,6 +145,12 @@ html, body {
   cursor: pointer;
 }
 
+@media (max-width: 463px) {
+  .start-button {
+    width: 30%;
+  }
+}
+
 .start-button:hover {
   background-color: black;
   color: #D78D00;
