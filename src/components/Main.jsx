@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Main({player1, setPlayer1, player2, setPlayer2}) {  
     return (
         <div>
@@ -21,7 +23,9 @@ function Main({player1, setPlayer1, player2, setPlayer2}) {
                     />
                 </label>
             </div>
-            <button className="start-button">Начать!</button>
+                <Link to="/game">
+                    <button className="start-button">Начать!</button>
+                </Link>
         </div>
     )
 }

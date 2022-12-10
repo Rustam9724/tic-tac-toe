@@ -38,13 +38,13 @@ html, body {
 
 .wrapper {
   text-align: center;
-  padding: 5rem 0 1rem;
+  padding: 3rem 0 1rem;
 }
 
 .title {
   font-family: Marker;
   color: #D78D00;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 3rem;
 }
 
@@ -68,6 +68,10 @@ html, body {
   padding: 0 0 0 1rem;
 }
 
+.names input:hover {
+  outline: 2px solid black;
+}
+
 .start-button {
   width: 15%;
   height: 2rem;
@@ -85,9 +89,14 @@ html, body {
 
 .game {
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   width: 310px;
   height: 310px;
+}
+
+.player {
+  margin-bottom: 1rem;
+  height: 1rem;
 }
 
 table {
@@ -247,4 +256,34 @@ td {
   transform: rotate(-45deg);
   transform-origin:left;
   animation: diagonal-trait 1s linear forwards;
+}
+
+.winner {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+}
+
+.over {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.end-button {
+  height: 2rem;
+  background-color: #D78D00;
+  font-family: Marker;
+  font-size: 1rem;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 1rem;
+  line-height: 0rem;
+  color: black;
+  width: 30%;
+}
+
+.end-button:hover {
+  background-color: black;
+  color: #D78D00;
 }
