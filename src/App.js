@@ -14,7 +14,7 @@ function App() {
     const [gameOver, setGameOver] = useState(false);
 
     return (
-        <Router>
+        <Router basename="/tic-tac-toe">
             <div className="wrapper">
                 <h1 className="title">Сыграйте в крестики-нолики!</h1>
                 <Routes>
